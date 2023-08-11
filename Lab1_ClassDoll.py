@@ -1,9 +1,12 @@
 class Doll:
+    total_price = 0
+    #this price is the same in all object in this class
     def __init__(self, name, material, dimension, price):
         self.name = name
         self.material = material
         self.dimension = dimension
         self.price = price
+        Doll.total_price += price
 
     def __str__(self):
         return self.name
@@ -58,6 +61,7 @@ allPrice = 0
 for doll in dolls:
     allPrice += doll.price
 print("Total price of all dolls: {}".format(allPrice))
+# print(Doll.total_price)
 print()
 print("Dolls sorted by price:")
 price = [(x.price, x.name) for x in dolls]
