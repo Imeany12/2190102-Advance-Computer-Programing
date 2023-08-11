@@ -69,7 +69,7 @@ for doll in dolls:
     doll.play()
 print()
 print("Playing with non-fragile dolls:")
-nonFragile = [x for x in dolls if x.is_fragile() != False ]
+nonFragile = [x for x in dolls if x.is_fragile() == False ]
 for x in nonFragile:
     x.play()
 
