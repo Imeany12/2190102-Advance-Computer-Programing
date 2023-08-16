@@ -56,6 +56,7 @@ dolls = [
 ]
 getName = lambda doll : doll.name 
 print(*map(getName,dolls))
+#*map() will unpack the returned map function 
 print()
 allPrice = 0
 for doll in dolls:
