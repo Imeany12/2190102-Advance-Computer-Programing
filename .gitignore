@@ -19,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+bin/
 wheels/
 share/python-wheels/
 *.egg-info/
@@ -26,6 +27,8 @@ share/python-wheels/
 *.egg
 MANIFEST
 *.md
+*.class
+*.zip
 
 
 
