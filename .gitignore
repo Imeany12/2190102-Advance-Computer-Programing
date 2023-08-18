@@ -27,8 +27,6 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-*.md
-*.class
 *.zip
 
 
