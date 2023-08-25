@@ -12,7 +12,7 @@ public class DoorWithDoorknob extends Door {
 
     public void unlock(Key key) {
         if (key.getKeyID().equals(this.doorknob.getDoorknobID())) {
-            this.unlock();
+            super.unlock();
         }
     }
 
