@@ -38,7 +38,7 @@ class Square extends Shape {
     }
 
     public void resize(double factor) {
-        this.setLength(length * Math.pow(factor, 0.5));
+        this.setLength(length * factor);
     }
 
     public void setLength(double length) {
@@ -70,8 +70,8 @@ class Rectangle extends Shape {
     }
 
     public void resize(double factor) {
-        this.setWidth(width * (Math.pow(factor, 0.5)));
-        this.setHeight(height * (Math.pow(factor, 0.5)));
+        this.setWidth(width * factor);
+        this.setHeight(height *factor);
     }
 
     public void setWidth(double width) {
@@ -105,7 +105,7 @@ class Circle extends Shape {
     }
 
     public void resize(double factor) {
-        this.setRadius(radius * (Math.pow(factor, 0.5)));
+        this.setRadius(radius * factor);
     }
 
     public void setRadius(double radius) {
@@ -118,16 +118,25 @@ public class Lab4_6538231721 {
     public static void main(String[] args) {
         Shape[] shapes = new Shape[5];
         shapes[0] = new Square(5, "Red");
-        shapes[1] = new Square(1, "Blue");
-        shapes[1].resize(9);
-        shapes[2] = new Rectangle(2, 3, "Green");
-        shapes[2].resize(4);
+        shapes[1] = new Square(3, "Blue");
+        shapes[2] = new Rectangle(4, 6, "Green");
         shapes[3] = new Rectangle(2, 8, "Yellow");
         shapes[4] = new Circle(7, "Orange");
         for (Shape shape : shapes) {
             shape.printDetails();
             System.out.println("----------------------");
         }
+        System.out.println();
+        System.out.println("===TEST REIZE METHOD===");
+        System.out.println();
+
+
+         for (Shape shape : shapes) {
+            shape.resize(5);
+            shape.printDetails();
+            System.out.println("----------------------");
+        
+         }
     }
 
 }
