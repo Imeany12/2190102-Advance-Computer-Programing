@@ -19,7 +19,7 @@ abstract class Shape {
 class Square extends Shape {
     private double length;
 
-    public Square(int length, String color) {
+    public Square(double length, String color) {
         super(color);
         this.length = length;
     }
@@ -50,7 +50,7 @@ class Rectangle extends Shape {
     private double width;
     private double height;
 
-    public Rectangle(int width, int height, String color) {
+    public Rectangle(double width, double height, String color) {
         super(color);
         this.width = width;
         this.height = height;
@@ -87,7 +87,7 @@ class Rectangle extends Shape {
 class Circle extends Shape {
     private double radius;
 
-    public Circle(int radius, String color) {
+    public Circle(double radius, String color) {
         super(color);
         this.radius = radius;
     }
