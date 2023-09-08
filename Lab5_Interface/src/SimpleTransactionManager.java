@@ -1,28 +1,28 @@
-public class SimpleTransactionManager implements TransactionManager{
+public class SimpleTransactionManager implements TransactionManager {
     private String[] wallets = new String[1000];
-    private String[] transactions = new String[10000];    
+    private String[] transactions = new String[10000];
     private int walletCount;
     private int transactionCount;
 
     public SimpleTransactionManager(String[] initialWallets) {
         // TODO Auto-generated constructor stub
-        for (String wallet : initialWallets){
+        for (String wallet : initialWallets) {
             wallets[walletCount] = wallet;
             walletCount++;
         }
-        
+
     }
 
     @Override
     public boolean transferFunds(String senderWalletId, String receiverWalletId, double amount) {
         // TODO Auto-generated method stub
-        if (!senderWalletId.equals("Wallet0")){
+        if (!senderWalletId.equals("Wallet0")) {
             double balance = getBalance(senderWalletId);
             if (balance < amount) {
                 throw new IllegalArgumentException("Not enough balance in the source wallet.");
             }
         }
-        if (!isValidWallet(receiverWalletId)){
+        if (!isValidWallet(receiverWalletId)) {
             wallets[walletCount] = receiverWalletId;
             walletCount++;
         }
@@ -36,7 +36,7 @@ public class SimpleTransactionManager implements TransactionManager{
         if (!isValidWallet(walletId)) {
             throw new IllegalArgumentException("Sender wallet does not exist.");
         }
-  
+
         double balance = 0.0;
         for (int i = 0; i < transactionCount; i++) {
             String[] parts = transactions[i].split("\\|");
@@ -47,9 +47,10 @@ public class SimpleTransactionManager implements TransactionManager{
                 balance += Double.parseDouble(parts[2]);
             }
         }
-  
+
         return balance;
     }
+
     @Override
     public boolean isValidWallet(String walletId) {
         // TODO Auto-generated method stub
@@ -63,11 +64,10 @@ public class SimpleTransactionManager implements TransactionManager{
         // the previous code do not iterate when the array is empty
 
         // for (String wallet : wallets){
-        //     if (wallet.equals(walletId)){
-        //         return true;
-        //     }
+        // if (wallet.equals(walletId)){
+        // return true;
         // }
-
+        // }
 
         return false;
     }

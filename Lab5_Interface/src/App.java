@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) {
         // Sample usage
-        String[] initialWallets = {"Wallet0"};
+        String[] initialWallets = { "Wallet0" };
 
         TransactionManager transactionManager = new SimpleTransactionManager(initialWallets);
         try {
@@ -18,20 +18,17 @@ public class App {
             System.out.println("Balance of Wallet3: " + transactionManager.getBalance("Wallet3"));
             System.out.println(transactionManager.isValidWallet("Wallet1"));
             System.out.println(transactionManager.isValidWallet("Wallet4"));
-       }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         try {
             transactionManager.transferFunds("Wallet3", "Wallet1", 100.0);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         try {
             transactionManager.transferFunds("Wallet5", "Wallet1", 100.0);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
