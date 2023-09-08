@@ -3,7 +3,7 @@ public class App {
         // Sample usage
         String[] initialWallets = {"Wallet0"};
 
-        TransactionManager transactionManager = new SimpleTransactionManager("initialWallets");
+        TransactionManager transactionManager = new SimpleTransactionManager(initialWallets);
         try {
             transactionManager.transferFunds("Wallet0", "Wallet1", 100.0);
             System.out.println("Balance of Wallet1: " + transactionManager.getBalance("Wallet1"));

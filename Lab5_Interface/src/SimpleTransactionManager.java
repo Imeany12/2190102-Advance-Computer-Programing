@@ -4,10 +4,13 @@ public class SimpleTransactionManager implements TransactionManager{
     private int walletCount;
     private int transactionCount;
 
-    public SimpleTransactionManager(String initialWallets) {
+    public SimpleTransactionManager(String[] initialWallets) {
         // TODO Auto-generated constructor stub
-        wallets[walletCount] = initialWallets;
-        walletCount++;
+        for (String wallet : initialWallets){
+            wallets[walletCount] = wallet;
+            walletCount++;
+        }
+        
     }
 
     @Override
@@ -55,7 +58,7 @@ public class SimpleTransactionManager implements TransactionManager{
                 return true;
             }
         }
-        
+
         // iterating this way will not cover the case where the wallet is empty
         // the previous code do not iterate when the array is empty
 
