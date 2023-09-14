@@ -19,7 +19,7 @@ public class SimpleTransactionManager implements TransactionManager {
         if (!senderWalletId.equals("Wallet0")) {
             double balance = getBalance(senderWalletId);
             if (balance < amount) {
-                throw new IllegalArgumentException("Not enough balance in the source wallet.");
+                throw new IllegalTransactionException("Not enough balance in the source wallet.");
             }
         }
         if (!isValidWallet(receiverWalletId)) {
@@ -70,6 +70,12 @@ public class SimpleTransactionManager implements TransactionManager {
         // }
 
         return false;
+    }
+
+    class IllegalTransactionException extends RuntimeException {
+        public IllegalTransactionException(String message) {
+            super(message);
+        }
     }
 
 }
