@@ -20,16 +20,11 @@ public class ShoppingCart {
     public void addItem(Item item) {
         // Extend the array to accommodate the new item
         Item[] newItems = new Item[items.length + 1];
-        if (items.length != 0){
-            for(int i=0;i < items.length;i++){
+        for(int i=0;i < items.length;i++){
             newItems[i] = items[i];
             }
             newItems[items.length] = item;
             items = newItems;
-        } else {
-            newItems[0] = item;
-            items = newItems;
-        }
     }
         
             
