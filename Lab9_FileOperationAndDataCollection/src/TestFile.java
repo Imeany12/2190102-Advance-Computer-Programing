@@ -9,12 +9,6 @@ import java.util.HashSet;
 import java.util.Map;
 
 public class TestFile {
-    Map<String, ArrayList<Integer>> scores;
-    Map<String, ArrayList<Integer>> editedScores;
-    public TestFile() {
-
-    }
-
     public HashMap<String, ArrayList<Integer>> read_scores(String fileName) {
         // read scores from file
         HashMap<String, ArrayList<Integer>> scores = new HashMap<String, ArrayList<Integer>>();
@@ -50,7 +44,6 @@ public class TestFile {
     }
 
     public int getTotalScore(Map<String, ArrayList<Integer>> scores, String studentID) {
-        // get total score for student
         if (scores.containsKey(studentID)) {
             ArrayList<Integer> quizes = scores.get(studentID);
             int totalScore = 0;
@@ -103,8 +96,5 @@ public class TestFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
-    
 }
