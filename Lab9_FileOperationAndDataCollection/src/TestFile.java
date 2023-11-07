@@ -91,6 +91,8 @@ public class TestFile {
 
         String filePath = resultFileName;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            writer.write("ID,Quiz1,Quiz2,Quiz3,Quiz4,Quiz5");
+            writer.newLine();
             for (String studentID : scores.keySet()) {
                 writer.write(studentID);
                 for (int i = 0; i < scores.get(studentID).size(); i++) {
