@@ -17,7 +17,7 @@ public class FileReaderSingleton {
 
     private void openFile() {
         try {
-            reader = new BufferedReader(new FileReader("\\data.txt"));
+            reader = new BufferedReader(new FileReader("data.txt"));
         } catch (FileNotFoundException e) {
             System.err.println("Unable to open file : " + e.getMessage());
         }
