@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive To-Do List</title>
+    <style>
+        /* Provided CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <!-- Provided HTML structure -->
+    <h1>Interactive To-Do List</h1>
+
+    <form>
+        <label for="taskInput">New Task:</label>
+        <input type="text" id="taskInput" placeholder="Enter task" required>
+        <button type="button" onclick="addTask()">Add Task</button>
+    </form>
+
+    <ul id="taskList">
+        <!-- Tasks will be added dynamically here -->
+    </ul>
+
+    <script>
+      // Enter your script here
+      function addTask() {
+        // Get the input value
+        const inputValue = document.getElementById("taskInput").value;
+
+        // Create a new paragraph element
+        const list = document.createElement("li");
+        list.textContent = inputValue;
+        document.getElementById("taskInput").value = "";
+
+        // Create "Edit" button
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.onclick = function () {
+            const updatedText = prompt("Enter the updated text:", list.textContent);
+            if (updatedText !== null && updatedText !== "") {
+                list.textContent = updatedText;
+            } else {
+                list.remove();
+                editButton.remove();
+                deleteButton.remove();
+            }
+        };
+
+        // Create "Delete" button
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.onclick = function () {
+            list.remove();
+            editButton.remove();
+            deleteButton.remove();
+        };
+
+        // Append paragraph and buttons to the container
+        const listContainer = document.getElementById("taskList");
+        listContainer.appendChild(list);
+        listContainer.appendChild(editButton);
+        listContainer.appendChild(deleteButton);
+    }
+
+    </script>
+</body>
+</html>
